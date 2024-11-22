@@ -21,7 +21,7 @@ pip install -e .
 
 Основной файл [src/translate.py](src/translate.py), функция ask_gpt()
 ```shell
-python -m translate --token secret-key-info --model gpt-3.5-turbo --prompt example --text "python"
+python -m translate --token secret-key --model gpt-3.5-turbo --prompt example --text "python"
 ```
 
 На примере команды curl [инструкция к API](https://platform.openai.com/docs/api-reference/chat)
