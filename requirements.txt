@@ -1,1 +1,2 @@
 requests==2.31.0
+opeanai==1.55.0
