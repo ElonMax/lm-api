@@ -56,6 +56,10 @@ def ask_gpt(token, model, content, sentence):
         "Authorization": "Bearer {}".format(token)
     }
 
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."}
+    ]
+
     # temperature и top_p - вариативность ответов, указывать либо temperature, либо top_p, но не вместе
     # n - количество ответов, при низкой вариативности будет возвращать одинаковые ответы
     data = {
@@ -63,10 +67,7 @@ def ask_gpt(token, model, content, sentence):
         "temperature": 0.3,
         # "top_p": 0.9,
         # "n": 5,
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": content.replace('TARGET', sentence)}
-        ]
+        "messages": messages.append({"role": "user", "content": content.replace('TARGET', sentence)})
     }
 
     # При частых запросах появляется 503 код:
